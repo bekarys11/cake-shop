@@ -1,5 +1,5 @@
 import { AppDataSource } from './data-source';
-import { User } from './entity/User';
+import { UsersEntity } from './users/UsersEntity';
 import { City } from './entity/City';
 
 AppDataSource.initialize()
@@ -8,7 +8,7 @@ AppDataSource.initialize()
     const city = new City();
     city.name = 'Taraz';
     await AppDataSource.manager.save(city);
-    const user = new User();
+    const user = new UsersEntity();
     user.first_name = 'Timber';
     user.last_name = 'Saw';
     user.role = 1;
@@ -18,7 +18,7 @@ AppDataSource.initialize()
     console.log('Saved a new user with id: ' + user.id);
 
     console.log('Loading users from the database...');
-    const users = await AppDataSource.manager.find(User);
+    const users = await AppDataSource.manager.find(UsersEntity);
     const cities = await AppDataSource.manager.find(City);
     console.log('Loaded users: ', users);
     console.log('Loaded cities: ', cities);

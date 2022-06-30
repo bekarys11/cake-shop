@@ -1,9 +1,9 @@
 import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from 'typeorm';
-import { City } from './City';
-import { UserRole } from '../users/users.dto';
+import { City } from '../entity/City';
+import { UserRole } from './users.dto';
 
 @Entity()
-export class User {
+export class Users {
   @PrimaryGeneratedColumn()
   id: number;
 
