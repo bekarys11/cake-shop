@@ -5,6 +5,8 @@ import { AppDataSource } from '../data-source';
 @Injectable()
 export class UsersService {
   async getAll(): Promise<User[]> {
-    return await AppDataSource.manager.find(User);
+    const users = await AppDataSource.manager.find(User);
+    console.log(users);
+    return users;
   }
 }
